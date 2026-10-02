@@ -1,0 +1,2893 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #090506;
+  color: #fff7f8;
+  font-family: "Inter", sans-serif;
+}
+
+.birthday-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(122, 28, 55, 0.22), transparent 35%),
+    linear-gradient(180deg, #090506 0%, #14070b 100%);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(180, 55, 91, 0.08);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #d9a7b4;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(80px, 16vw, 170px);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -4px;
+  background: linear-gradient(
+    135deg,
+    #fff7f8,
+    #f1b6c5,
+    #fff7f8
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.birthday-number {
+  margin-top: 35px;
+}
+
+.birthday-number span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(90px, 18vw, 180px);
+  font-weight: 400;
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.06);
+  -webkit-text-stroke: 1px rgba(238, 171, 190, 0.45);
+}
+
+.hero-subtitle {
+  margin-top: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  color: #e7cbd1;
+  font-style: italic;
+}
+
+.surprise-button {
+  margin-top: 40px;
+  border: 1px solid rgba(255, 190, 210, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+.surprise-button:hover {
+  background: rgba(255, 150, 180, 0.12);
+}
+
+/* SCROLL */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #9f858c;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* FLOATING ELEMENTS */
+
+.floating-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart,
+.sparkle {
+  position: absolute;
+  color: rgba(239, 137, 166, 0.25);
+}
+
+.heart-1 {
+  width: 20px;
+  top: 20%;
+  left: 15%;
+  animation: float 7s infinite ease-in-out;
+}
+
+.heart-2 {
+  width: 14px;
+  top: 70%;
+  left: 80%;
+  animation: float 9s infinite ease-in-out reverse;
+}
+
+.heart-3 {
+  width: 17px;
+  top: 30%;
+  right: 12%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.heart-4 {
+  width: 12px;
+  bottom: 20%;
+  left: 25%;
+  animation: float 10s infinite ease-in-out reverse;
+}
+
+.sparkle-1 {
+  width: 18px;
+  top: 18%;
+  right: 25%;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.sparkle-2 {
+  width: 14px;
+  bottom: 30%;
+  left: 12%;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(8deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+/* STORY */
+
+.story-placeholder {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 25px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(126, 31, 59, 0.18), transparent 40%),
+    #100609;
+}
+
+.story-placeholder > div {
+  max-width: 700px;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #c88c9d;
+  margin-bottom: 25px;
+}
+
+.story-placeholder h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(50px, 8vw, 90px);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.story-placeholder p:last-child {
+  margin: 30px auto 0;
+  max-width: 450px;
+  color: #a98e95;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .birthday-number {
+    margin-top: 25px;
+  }
+
+  .hero-subtitle {
+    font-size: 21px;
+  }
+}
+
+/* =========================================
+   CHAPTER ONE — OUR STORY
+========================================= */
+
+.story-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 160px 20px 180px;
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(139, 35, 68, 0.18),
+      transparent 42%
+    ),
+    #100609;
+}
+
+.story-heading {
+  max-width: 700px;
+  margin: 0 auto 130px;
+  text-align: center;
+}
+
+.story-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 8vw, 100px);
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.story-heading h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.story-intro {
+  max-width: 500px;
+  margin: 35px auto 0;
+  color: #a98d95;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(224, 137, 161, 0.5),
+    transparent
+  );
+}
+
+/* MEMORY */
+
+.memory {
+  position: relative;
+  width: 50%;
+  margin-bottom: 120px;
+}
+
+.memory-left {
+  padding-right: 80px;
+  text-align: right;
+}
+
+.memory-right {
+  margin-left: 50%;
+  padding-left: 80px;
+}
+
+.memory-dot {
+  position: absolute;
+  top: 12px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #e5a5b7;
+
+  box-shadow:
+    0 0 0 6px rgba(229, 165, 183, 0.08),
+    0 0 25px rgba(229, 165, 183, 0.5);
+}
+
+.memory-left .memory-dot {
+  right: -4px;
+}
+
+.memory-right .memory-dot {
+  left: -4px;
+}
+
+.memory-card {
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  border-radius: 6px;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(229, 165, 183, 0.3);
+}
+
+.memory-number {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #c48698;
+  margin-bottom: 20px;
+}
+
+.memory-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #fff7f8;
+}
+
+.memory-card > p:last-child {
+  color: #9e858c;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .story-section {
+    padding-top: 120px;
+  }
+
+  .story-heading {
+    margin-bottom: 80px;
+  }
+
+  .timeline::before {
+    left: 12px;
+  }
+
+  .memory,
+  .memory-left,
+  .memory-right {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 45px;
+    padding-right: 0;
+    text-align: left;
+    margin-bottom: 70px;
+  }
+
+  .memory-left .memory-dot,
+  .memory-right .memory-dot {
+    left: 8px;
+    right: auto;
+  }
+
+  .memory-card {
+    padding: 25px;
+  }
+
+  .memory-card h3 {
+    font-size: 30px;
+  }
+}
+
+/* =========================================
+   CHAPTER TWO — 18 THINGS
+========================================= */
+
+.things-section {
+  position: relative;
+  padding: 170px 25px 200px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(150, 35, 72, 0.18),
+      transparent 42%
+    ),
+    #0c0508;
+}
+
+.things-heading {
+  max-width: 750px;
+  margin: 0 auto 110px;
+  text-align: center;
+}
+
+.things-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 8vw, 100px);
+  line-height: 0.9;
+  font-weight: 500;
+}
+
+.things-heading h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.things-heading > p:last-child {
+  margin-top: 30px;
+  color: #a98d95;
+  font-size: 14px;
+}
+
+
+/* GRID */
+
+.things-grid {
+  max-width: 1050px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 45px;
+
+  align-items: start;
+}
+
+
+/* CARD */
+
+.thing-card {
+  position: relative;
+
+  min-height: 280px;
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 5px;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.thing-card:hover {
+  transform: translateY(-8px) rotate(0deg) !important;
+
+  border-color:
+    rgba(229, 165, 183, 0.3);
+}
+
+
+.thing-card > span {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #c48698;
+}
+
+
+.thing-card h3 {
+  margin-top: 15px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 38px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: #fff7f8;
+}
+
+
+.thing-card p {
+  margin-top: 18px;
+
+  max-width: 380px;
+
+  color: #9e858c;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* SPECIAL 18TH CARD */
+
+.special-card {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(177, 50, 87, 0.18),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border-color:
+    rgba(229, 165, 183, 0.2);
+
+  text-align: center;
+
+  align-items: center;
+}
+
+.special-card svg {
+  color: #e5a5b7;
+  margin-bottom: 15px;
+}
+
+.special-card > span {
+  position: static;
+
+  margin-bottom: 10px;
+}
+
+.special-card h3 {
+  font-size: 45px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .things-section {
+    padding: 120px 20px 150px;
+  }
+
+  .things-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .thing-card {
+    min-height: 250px;
+    padding: 30px;
+  }
+
+  .thing-card h3 {
+    font-size: 34px;
+  }
+
+}
+
+/* =========================================
+   CHAPTER THREE — MEMORIES
+========================================= */
+
+.memories-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 170px 25px 220px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(150, 35, 72, 0.16),
+      transparent 42%
+    ),
+    #100609;
+}
+
+
+/* HEADING */
+
+.memories-heading {
+  max-width: 750px;
+
+  margin: 0 auto 110px;
+
+  text-align: center;
+}
+
+.memories-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(
+    55px,
+    8vw,
+    100px
+  );
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+}
+
+.memories-heading h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+.memories-heading > p:last-child {
+  margin-top: 30px;
+
+  color: #a98d95;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* MEMORY WALL */
+
+.memory-wall {
+  position: relative;
+
+  max-width: 1000px;
+
+  min-height: 850px;
+
+  margin: auto;
+}
+
+
+/* POLAROIDS */
+
+.polaroid {
+  position: absolute;
+
+  width: 280px;
+
+  padding: 12px 12px 20px;
+
+  background: #f5eeee;
+
+  color: #241217;
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.35);
+
+  transition:
+    box-shadow 0.4s ease;
+}
+
+.polaroid:hover {
+  box-shadow:
+    0 35px 80px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+/* PHOTO AREA */
+
+.photo-placeholder {
+  width: 100%;
+
+  aspect-ratio: 1 / 1.05;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8b6bf,
+      #8f5868
+    );
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.polaroid p {
+  margin: 15px 5px 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 21px;
+
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+
+/* POSITIONS */
+
+.polaroid-one {
+  top: 30px;
+  left: 5%;
+}
+
+.polaroid-two {
+  top: 0;
+  right: 7%;
+}
+
+.polaroid-three {
+  top: 330px;
+  left: 20%;
+}
+
+.polaroid-four {
+  top: 360px;
+  right: 16%;
+}
+
+.polaroid-five {
+  top: 590px;
+  left: 39%;
+}
+
+
+/* CENTER HEART */
+
+.memory-heart {
+  position: absolute;
+
+  top: 410px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 75px;
+  height: 75px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: #e5a5b7;
+
+  background:
+    rgba(229, 165, 183, 0.07);
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.2);
+
+  box-shadow:
+    0 0 50px
+    rgba(229, 165, 183, 0.12);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .memories-section {
+    padding:
+      120px 20px
+      150px;
+  }
+
+  .memory-wall {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 40px;
+  }
+
+  .polaroid {
+    position: relative;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    width: min(
+      300px,
+      85vw
+    );
+  }
+
+  .memory-heart {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    transform: none;
+
+    margin: 10px 0;
+  }
+}
+
+/* =========================================
+   CHAPTER FOUR — LETTER
+========================================= */
+
+.letter-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 180px 25px 220px;
+
+  display: flex;
+
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(139, 35, 68, 0.14),
+      transparent 45%
+    ),
+    #090506;
+}
+
+
+.letter-container {
+  width: 100%;
+
+  max-width: 850px;
+
+  text-align: center;
+}
+
+
+/* TITLE */
+
+.letter-intro {
+  margin-top: 40px;
+
+  margin-bottom: 80px;
+}
+
+
+.letter-small {
+  display: block;
+
+  color: #a98d95;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 15px;
+}
+
+
+.letter-intro h2 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(75px, 12vw, 140px);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  color: #f5d9df;
+
+  margin: 0;
+}
+
+
+.letter-line {
+  width: 70px;
+
+  height: 1px;
+
+  margin: 35px auto 0;
+
+  background:
+    rgba(229, 165, 183, 0.5);
+}
+
+
+/* LETTER */
+
+.letter-body {
+  max-width: 650px;
+
+  margin: auto;
+
+  text-align: left;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 22px;
+
+  line-height: 1.8;
+
+  color: #c8b1b7;
+}
+
+
+.letter-body p {
+  margin-bottom: 30px;
+}
+
+
+/* FIRST LINE */
+
+.letter-body > p:first-child {
+  font-size: 30px;
+
+  color: #f3dbe1;
+}
+
+
+/* HIGHLIGHT */
+
+.letter-highlight {
+  position: relative;
+
+  margin:
+    60px 0 !important;
+
+  padding:
+    35px 30px;
+
+  text-align: center;
+
+  font-size: 32px;
+
+  line-height: 1.25;
+
+  color: #f1c4cf;
+
+  font-style: italic;
+
+  border-top:
+    1px solid
+    rgba(229, 165, 183, 0.2);
+
+  border-bottom:
+    1px solid
+    rgba(229, 165, 183, 0.2);
+}
+
+
+/* SIGNATURE */
+
+.letter-signature {
+  margin-top: 70px;
+
+  text-align: right;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.letter-signature span {
+  font-size: 16px;
+
+  color: #9e858c;
+}
+
+
+.letter-signature strong {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 36px;
+
+  font-weight: 500;
+
+  color: #f1c4cf;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .letter-section {
+    padding:
+      130px 25px
+      160px;
+  }
+
+  .letter-intro {
+    margin-bottom: 60px;
+  }
+
+  .letter-body {
+    font-size: 19px;
+
+    line-height: 1.75;
+  }
+
+  .letter-highlight {
+    font-size: 27px;
+
+    padding:
+      30px 15px;
+  }
+
+  .letter-signature {
+    margin-top: 50px;
+  }
+}
+/* =========================================
+   CHAPTER FIVE — OUR SONG
+========================================= */
+
+.song-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 180px 25px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(157, 39, 76, 0.22),
+      transparent 40%
+    ),
+    #0d0508;
+}
+
+
+.song-content {
+  max-width: 700px;
+
+  width: 100%;
+}
+
+
+/* VINYL */
+
+.vinyl-wrapper {
+  width: 240px;
+  height: 240px;
+
+  margin: 50px auto 45px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+.vinyl {
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      #171014 0px,
+      #171014 3px,
+      #0b080a 4px,
+      #171014 6px
+    );
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.55),
+
+    0 0 50px
+    rgba(229, 165, 183, 0.08);
+}
+
+
+.vinyl::after {
+  content: "";
+
+  position: absolute;
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #e5a5b7 0%,
+      #9d405e 65%,
+      #602338 100%
+    );
+}
+
+
+.vinyl-center {
+  position: relative;
+
+  z-index: 2;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+
+  z-index: 3;
+}
+
+
+/* TEXT */
+
+.song-caption {
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #c48698;
+
+  margin-bottom: 20px;
+}
+
+
+.song-content h2 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(55px, 8vw, 95px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+}
+
+
+.song-content h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+
+.song-description {
+  max-width: 500px;
+
+  margin: 35px auto 0;
+
+  color: #a98d95;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* PLAY BUTTON */
+
+.play-button {
+  margin-top: 40px;
+
+  padding: 15px 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 100px;
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.play-button:hover {
+  background:
+    rgba(229, 165, 183, 0.12);
+
+  transform: scale(1.04);
+}
+
+
+.play-icon {
+  width: 27px;
+  height: 27px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #e5a5b7;
+
+  color: #18080d;
+
+  font-size: 9px;
+
+  padding-left: 2px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .song-section {
+    padding:
+      130px 20px
+      160px;
+  }
+
+  .vinyl-wrapper {
+    margin-top: 40px;
+  }
+
+  .vinyl {
+    width: 190px;
+    height: 190px;
+  }
+
+}
+/* =========================================
+   FINAL CHAPTER — 18
+========================================= */
+
+.final-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 150px 25px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(175, 39, 82, 0.25),
+      transparent 40%
+    ),
+    #080406;
+}
+
+
+/* BIG 18 */
+
+.eighteen {
+  margin:
+    45px auto
+    35px;
+
+  width: 240px;
+  height: 240px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(229, 165, 183, 0.12),
+      transparent 65%
+    );
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.18);
+
+  box-shadow:
+    0 0 100px
+    rgba(229, 165, 183, 0.12);
+}
+
+
+.eighteen span {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(120px, 17vw, 190px);
+
+  line-height: 1;
+
+  color: #f1c4cf;
+
+  text-shadow:
+    0 0 60px
+    rgba(229, 165, 183, 0.35);
+}
+
+
+/* TEXT */
+
+.final-small {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #a98d95;
+}
+
+
+.final-content h2 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(60px, 10vw, 120px);
+
+  line-height: 0.78;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+}
+
+
+.final-content h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+
+.final-heart {
+  margin: 45px auto 25px;
+
+  color: #e5a5b7;
+
+  animation:
+    heartbeat 2s infinite ease-in-out;
+}
+
+
+@keyframes heartbeat {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+}
+
+
+.final-message {
+  color: #a98d95;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 22px;
+
+  line-height: 1.6;
+}
+
+
+/* LAST BUTTON */
+
+.last-button {
+  margin-top: 50px;
+
+  padding: 16px 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 100px;
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.last-button:hover {
+  transform: scale(1.05);
+
+  background:
+    rgba(229, 165, 183, 0.12);
+}
+
+
+/* =========================================
+   LAST MESSAGE
+========================================= */
+
+.last-message-section {
+  min-height: 100vh;
+
+  padding:
+    160px 25px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 28, 57, 0.14),
+      transparent 45%
+    ),
+    #090506;
+}
+
+
+.last-message-content {
+  max-width: 750px;
+}
+
+
+.last-heart {
+  color: #e5a5b7;
+
+  margin-bottom: 30px;
+
+  animation:
+    heartbeat 2s infinite ease-in-out;
+}
+
+
+.last-message-content h2 {
+  margin-top: 45px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(55px, 8vw, 95px);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+}
+
+
+.last-text {
+  max-width: 550px;
+
+  margin:
+    50px auto 0;
+
+  color: #b49ba2;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px;
+
+  line-height: 1.7;
+}
+
+
+.last-signature {
+  margin-top: 70px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.last-signature span {
+  color: #9e858c;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+}
+
+
+.last-signature strong {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 40px;
+
+  font-weight: 500;
+
+  color: #e5a5b7;
+}
+
+
+.end-mark {
+  margin-top: 100px;
+
+  color: #c48698;
+
+  font-size: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .final-section {
+    padding:
+      120px 20px;
+  }
+
+  .eighteen {
+    width: 190px;
+    height: 190px;
+  }
+
+  .final-message {
+    font-size: 19px;
+  }
+
+  .last-text {
+    font-size: 20px;
+  }
+
+}
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+.memories-section {
+  min-height: 100vh;
+  padding: 140px 30px;
+  background: #0d0609;
+  overflow: hidden;
+}
+
+.memories-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px;
+}
+
+.memories-header h2 {
+  margin: 25px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 7vw, 90px);
+  line-height: 0.9;
+  font-weight: 500;
+}
+
+.memories-header h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.memories-intro {
+  color: #a98d95;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   PHOTO GRID
+========================================= */
+
+.photo-wall {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 35px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   POLAROID
+========================================= */
+
+.polaroid {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 12px 25px;
+
+  background: #f3e8e5;
+
+  color: #24171a;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4);
+
+  transition:
+    box-shadow 0.3s ease;
+}
+
+.polaroid:hover {
+  box-shadow:
+    0 30px 65px rgba(0, 0, 0, 0.55);
+}
+
+.polaroid p {
+  margin: 15px 5px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.photo-frame {
+  width: 100%;
+
+  height: 280px;
+
+  overflow: hidden;
+
+  background: #e8dddd;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    IMPORTANT:
+    This prevents faces from being cropped.
+  */
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SECOND ROW
+========================================= */
+
+.polaroid:nth-child(4) {
+  grid-column: 1 / 2;
+
+  justify-self: end;
+
+  width: 85%;
+}
+
+.polaroid:nth-child(5) {
+  grid-column: 3 / 4;
+
+  justify-self: start;
+
+  width: 85%;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+  .memories-section {
+    padding: 110px 20px;
+  }
+
+  .memories-header {
+    margin-bottom: 50px;
+  }
+
+  .photo-wall {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 35px;
+  }
+
+  .polaroid {
+    width: min(88vw, 330px) !important;
+  }
+
+  .photo-frame {
+    height: 330px;
+  }
+}
+
+/* =========================================
+   AADITI — MEMORY GALLERY
+   NEW CLASSES — DO NOT MIX WITH OLD POLAROID CSS
+========================================= */
+
+.memory-gallery {
+  min-height: 100vh;
+  padding: 140px 30px 150px;
+  background: #0d0609;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.memory-gallery-header {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 75px;
+  text-align: center;
+}
+
+.memory-gallery-header h2 {
+  margin: 25px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 7vw, 90px);
+  line-height: 0.9;
+  font-weight: 500;
+  color: #f5e8eb;
+}
+
+.memory-gallery-header h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.memory-gallery-intro {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.5;
+
+  color: #a98d95;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.memory-grid {
+  width: min(950px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  column-gap: 28px;
+  row-gap: 55px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.memory-card {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 12px 22px;
+
+  background: #f3e8e5;
+
+  color: #24171a;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.memory-card img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  /*
+    IMPORTANT:
+    No cropping.
+    The complete original photo is shown.
+  */
+  object-fit: contain;
+}
+
+.memory-card p {
+  margin: 14px 4px 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+.memory-card:hover {
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================
+   FIRST ROW
+========================================= */
+
+.memory-card:nth-child(1) {
+  grid-column: 1 / 3;
+}
+
+.memory-card:nth-child(2) {
+  grid-column: 3 / 5;
+}
+
+.memory-card:nth-child(3) {
+  grid-column: 5 / 7;
+}
+
+
+/* =========================================
+   SECOND ROW
+========================================= */
+
+.memory-card:nth-child(4) {
+  grid-column: 2 / 4;
+}
+
+.memory-card:nth-child(5) {
+  grid-column: 4 / 6;
+}
+
+
+/* =========================================
+   SLIGHT NATURAL ROTATION
+========================================= */
+
+.memory-card:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.memory-card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.memory-card:nth-child(3) {
+  transform: rotate(-1.5deg);
+}
+
+.memory-card:nth-child(4) {
+  transform: rotate(1.5deg);
+}
+
+.memory-card:nth-child(5) {
+  transform: rotate(-2deg);
+}
+
+.memory-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(0deg);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+  .memory-gallery {
+    padding: 110px 20px 100px;
+  }
+
+  .memory-gallery-header {
+    margin-bottom: 55px;
+  }
+
+  .memory-grid {
+    width: min(360px, 100%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 40px;
+  }
+
+  .memory-card {
+    width: 100%;
+  }
+
+  .memory-card:nth-child(1),
+  .memory-card:nth-child(2),
+  .memory-card:nth-child(3),
+  .memory-card:nth-child(4),
+  .memory-card:nth-child(5) {
+    transform: rotate(0deg);
+  }
+
+  .memory-card:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+/* =========================================
+   CHAPTER FOUR — LETTER
+========================================= */
+
+.letter-section {
+  min-height: 100vh;
+  padding: 150px 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 45, 65, 0.16),
+      transparent 50%
+    ),
+    #0a0507;
+}
+
+.letter-wrapper {
+  width: min(850px, 100%);
+  text-align: center;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.letter-heading {
+  margin: 25px 0 65px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(60px, 8vw, 100px);
+  line-height: 0.85;
+  font-weight: 500;
+
+  color: #f5e8eb;
+}
+
+.letter-heading span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+
+/* =========================================
+   COFFEE PAPER
+========================================= */
+
+.letter-card {
+  width: min(700px, 100%);
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  padding: 55px 65px 60px;
+
+  text-align: left;
+
+  position: relative;
+
+  overflow: hidden;
+
+  /* Warm old-paper base */
+  background:
+    radial-gradient(
+      ellipse at 12% 12%,
+      rgba(105, 62, 30, 0.22),
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 88% 18%,
+      rgba(120, 72, 35, 0.15),
+      transparent 25%
+    ),
+    radial-gradient(
+      ellipse at 82% 88%,
+      rgba(100, 55, 25, 0.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse at 18% 85%,
+      rgba(130, 78, 38, 0.13),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #ead9bd,
+      #dfc7a4
+    );
+
+  color: #4a3328;
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.55),
+    inset 0 0 60px rgba(75, 42, 20, 0.10);
+}
+
+
+/* =========================================
+   PAPER GRAIN / TEXTURE
+========================================= */
+
+.letter-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border: 1px solid rgba(86, 50, 30, 0.22);
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* Subtle paper texture */
+
+.letter-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.22;
+
+  background-image:
+    radial-gradient(
+      rgba(80, 50, 30, 0.18) 0.7px,
+      transparent 0.7px
+    );
+
+  background-size: 5px 5px;
+
+  mix-blend-mode: multiply;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   TOP DATE + HEART
+========================================= */
+
+.letter-top {
+  position: relative;
+
+  z-index: 4;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 45px;
+
+  color: #725548;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.letter-top svg {
+  color: #914d61;
+}
+
+
+/* =========================================
+   LETTER BODY
+========================================= */
+
+.letter-body {
+  position: relative;
+
+  z-index: 4;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  line-height: 1.65;
+
+  color: #4a3328;
+}
+
+.letter-body p {
+  margin: 0 0 28px;
+}
+
+
+/* =========================================
+   GREETING
+========================================= */
+
+.letter-greeting {
+  margin-bottom: 35px !important;
+
+  font-size: 30px;
+
+  color: #3f2922;
+}
+
+
+/* =========================================
+   HIGHLIGHT
+========================================= */
+
+.letter-highlight {
+  margin: 40px 0 !important;
+
+  padding: 25px 30px;
+
+  border-left: 2px solid #9b6170;
+
+  background:
+    rgba(110, 65, 40, 0.07);
+
+  color: #704052;
+
+  font-size: 27px;
+
+  line-height: 1.4;
+
+  font-style: italic;
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.letter-signature {
+  margin-top: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  text-align: right;
+}
+
+.letter-signature span {
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: #705548;
+}
+
+.letter-signature strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 35px;
+
+  font-weight: 500;
+
+  color: #7d3d52;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .letter-section {
+    padding: 110px 18px;
+  }
+
+  .letter-heading {
+    margin-bottom: 45px;
+
+    font-size: clamp(55px, 15vw, 80px);
+  }
+
+  .letter-card {
+    padding: 40px 30px 45px;
+  }
+
+  .letter-body {
+    font-size: 20px;
+
+    line-height: 1.6;
+  }
+
+  .letter-greeting {
+    font-size: 27px;
+  }
+
+  .letter-highlight {
+    padding: 20px;
+
+    font-size: 23px;
+  }
+
+  .letter-signature {
+    margin-top: 45px;
+  }
+
+  .letter-signature strong {
+    font-size: 30px;
+  }
+
+}
+/* =========================================
+   CINEMATIC FINAL CHAPTER
+========================================= */
+
+.final-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 150px 25px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(175, 39, 82, 0.20),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(229, 165, 183, 0.05),
+      transparent 55%
+    ),
+    #080406;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.final-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(900px, 100%);
+}
+
+
+/* =========================================
+   18
+========================================= */
+
+.cinematic-eighteen {
+  margin: 60px auto 25px;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* glowing halo */
+
+.cinematic-eighteen::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(229, 165, 183, 0.16),
+      transparent 65%
+    );
+
+  filter: blur(5px);
+
+  animation: eighteenGlow 4s ease-in-out infinite;
+}
+
+
+/* number */
+
+.cinematic-eighteen span {
+  position: relative;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(150px, 25vw, 300px);
+
+  line-height: 0.75;
+
+  font-weight: 400;
+
+  letter-spacing: -12px;
+
+  color: #f1c4cf;
+
+  text-shadow:
+    0 0 20px rgba(229, 165, 183, 0.25),
+    0 0 70px rgba(229, 165, 183, 0.20),
+    0 0 130px rgba(229, 165, 183, 0.10);
+}
+
+
+@keyframes eighteenGlow {
+
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TEXT
+========================================= */
+
+.final-small {
+  margin-top: 35px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  color: #a98d95;
+}
+
+
+/* =========================================
+   BIRTHDAY TITLE
+========================================= */
+
+.final-content h2 {
+  margin-top: 45px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 10vw, 120px);
+
+  line-height: 0.78;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  color: #f5e8eb;
+}
+
+.final-content h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.final-heart {
+  margin: 50px auto 25px;
+
+  color: #e5a5b7;
+
+  animation:
+    heartbeat 2s ease-in-out infinite;
+
+  filter:
+    drop-shadow(
+      0 0 15px rgba(229, 165, 183, 0.25)
+    );
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.final-message {
+  color: #a98d95;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 23px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   LAST BUTTON
+========================================= */
+
+.last-button {
+  margin-top: 50px;
+
+  padding: 16px 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 100px;
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.last-button:hover {
+  transform: scale(1.05);
+
+  background:
+    rgba(229, 165, 183, 0.12);
+}
+
+
+/* =========================================
+   FLOATING PARTICLES
+========================================= */
+
+.final-particles {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+
+  color: #e5a5b7;
+
+  opacity: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  animation:
+    particleFloat 6s ease-in-out infinite;
+}
+
+.p1 {
+  left: 15%;
+  top: 25%;
+
+  font-size: 16px;
+
+  animation-delay: 0.5s;
+}
+
+.p2 {
+  left: 27%;
+  top: 65%;
+
+  font-size: 10px;
+
+  animation-delay: 1.8s;
+}
+
+.p3 {
+  left: 82%;
+  top: 30%;
+
+  font-size: 20px;
+
+  animation-delay: 2.5s;
+}
+
+.p4 {
+  left: 72%;
+  top: 70%;
+
+  font-size: 9px;
+
+  animation-delay: 3.2s;
+}
+
+.p5 {
+  left: 10%;
+  top: 52%;
+
+  font-size: 12px;
+
+  animation-delay: 4s;
+}
+
+.p6 {
+  left: 90%;
+  top: 58%;
+
+  font-size: 8px;
+
+  animation-delay: 1s;
+}
+
+.p7 {
+  left: 38%;
+  top: 18%;
+
+  font-size: 14px;
+
+  animation-delay: 2s;
+}
+
+.p8 {
+  left: 63%;
+  top: 20%;
+
+  font-size: 9px;
+
+  animation-delay: 3.5s;
+}
+
+
+@keyframes particleFloat {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+
+  25% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: translateY(-20px) scale(1);
+  }
+
+  75% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-45px) scale(0.8);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .final-section {
+    padding: 120px 20px;
+  }
+
+  .cinematic-eighteen {
+    margin-top: 50px;
+  }
+
+  .cinematic-eighteen::before {
+    width: 230px;
+    height: 230px;
+  }
+
+  .cinematic-eighteen span {
+    font-size: 170px;
+    letter-spacing: -8px;
+  }
+
+  .final-content h2 {
+    font-size: clamp(58px, 17vw, 90px);
+
+    margin-top: 40px;
+  }
+
+  .final-message {
+    font-size: 20px;
+  }
+
+}

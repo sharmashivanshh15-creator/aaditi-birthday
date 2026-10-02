@@ -1,0 +1,4845 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #090506;
+  color: #fff7f8;
+  font-family: "Inter", sans-serif;
+}
+
+.birthday-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(122, 28, 55, 0.22), transparent 35%),
+    linear-gradient(180deg, #090506 0%, #14070b 100%);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(180, 55, 91, 0.08);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #d9a7b4;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(80px, 16vw, 170px);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -4px;
+  background: linear-gradient(
+    135deg,
+    #fff7f8,
+    #f1b6c5,
+    #fff7f8
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.birthday-number {
+  margin-top: 35px;
+}
+
+.birthday-number span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(90px, 18vw, 180px);
+  font-weight: 400;
+  line-height: 0.8;
+  color: rgba(255, 255, 255, 0.06);
+  -webkit-text-stroke: 1px rgba(238, 171, 190, 0.45);
+}
+
+.hero-subtitle {
+  margin-top: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  color: #e7cbd1;
+  font-style: italic;
+}
+
+.surprise-button {
+  margin-top: 40px;
+  border: 1px solid rgba(255, 190, 210, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+.surprise-button:hover {
+  background: rgba(255, 150, 180, 0.12);
+}
+
+/* SCROLL */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #9f858c;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* FLOATING ELEMENTS */
+
+.floating-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart,
+.sparkle {
+  position: absolute;
+  color: rgba(239, 137, 166, 0.25);
+}
+
+.heart-1 {
+  width: 20px;
+  top: 20%;
+  left: 15%;
+  animation: float 7s infinite ease-in-out;
+}
+
+.heart-2 {
+  width: 14px;
+  top: 70%;
+  left: 80%;
+  animation: float 9s infinite ease-in-out reverse;
+}
+
+.heart-3 {
+  width: 17px;
+  top: 30%;
+  right: 12%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.heart-4 {
+  width: 12px;
+  bottom: 20%;
+  left: 25%;
+  animation: float 10s infinite ease-in-out reverse;
+}
+
+.sparkle-1 {
+  width: 18px;
+  top: 18%;
+  right: 25%;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.sparkle-2 {
+  width: 14px;
+  bottom: 30%;
+  left: 12%;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(8deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+/* STORY */
+
+.story-placeholder {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 25px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(126, 31, 59, 0.18), transparent 40%),
+    #100609;
+}
+
+.story-placeholder > div {
+  max-width: 700px;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #c88c9d;
+  margin-bottom: 25px;
+}
+
+.story-placeholder h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(50px, 8vw, 90px);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.story-placeholder p:last-child {
+  margin: 30px auto 0;
+  max-width: 450px;
+  color: #a98e95;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .birthday-number {
+    margin-top: 25px;
+  }
+
+  .hero-subtitle {
+    font-size: 21px;
+  }
+}
+
+/* =========================================
+   CHAPTER ONE — OUR STORY
+========================================= */
+
+.story-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 160px 20px 180px;
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(139, 35, 68, 0.18),
+      transparent 42%
+    ),
+    #100609;
+}
+
+.story-heading {
+  max-width: 700px;
+  margin: 0 auto 130px;
+  text-align: center;
+}
+
+.story-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 8vw, 100px);
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.story-heading h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.story-intro {
+  max-width: 500px;
+  margin: 35px auto 0;
+  color: #a98d95;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(224, 137, 161, 0.5),
+    transparent
+  );
+}
+
+/* MEMORY */
+
+.memory {
+  position: relative;
+  width: 50%;
+  margin-bottom: 120px;
+}
+
+.memory-left {
+  padding-right: 80px;
+  text-align: right;
+}
+
+.memory-right {
+  margin-left: 50%;
+  padding-left: 80px;
+}
+
+.memory-dot {
+  position: absolute;
+  top: 12px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #e5a5b7;
+
+  box-shadow:
+    0 0 0 6px rgba(229, 165, 183, 0.08),
+    0 0 25px rgba(229, 165, 183, 0.5);
+}
+
+.memory-left .memory-dot {
+  right: -4px;
+}
+
+.memory-right .memory-dot {
+  left: -4px;
+}
+
+.memory-card {
+  padding: 35px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  border-radius: 6px;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(229, 165, 183, 0.3);
+}
+
+.memory-number {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #c48698;
+  margin-bottom: 20px;
+}
+
+.memory-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #fff7f8;
+}
+
+.memory-card > p:last-child {
+  color: #9e858c;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .story-section {
+    padding-top: 120px;
+  }
+
+  .story-heading {
+    margin-bottom: 80px;
+  }
+
+  .timeline::before {
+    left: 12px;
+  }
+
+  .memory,
+  .memory-left,
+  .memory-right {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 45px;
+    padding-right: 0;
+    text-align: left;
+    margin-bottom: 70px;
+  }
+
+  .memory-left .memory-dot,
+  .memory-right .memory-dot {
+    left: 8px;
+    right: auto;
+  }
+
+  .memory-card {
+    padding: 25px;
+  }
+
+  .memory-card h3 {
+    font-size: 30px;
+  }
+}
+
+/* =========================================
+   CHAPTER TWO — 18 THINGS
+========================================= */
+
+.things-section {
+  position: relative;
+  padding: 170px 25px 200px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(150, 35, 72, 0.18),
+      transparent 42%
+    ),
+    #0c0508;
+}
+
+.things-heading {
+  max-width: 750px;
+  margin: 0 auto 110px;
+  text-align: center;
+}
+
+.things-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 8vw, 100px);
+  line-height: 0.9;
+  font-weight: 500;
+}
+
+.things-heading h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.things-heading > p:last-child {
+  margin-top: 30px;
+  color: #a98d95;
+  font-size: 14px;
+}
+
+
+/* GRID */
+
+.things-grid {
+  max-width: 1050px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 45px;
+
+  align-items: start;
+}
+
+
+/* CARD */
+
+.thing-card {
+  position: relative;
+
+  min-height: 280px;
+
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 5px;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.thing-card:hover {
+  transform: translateY(-8px) rotate(0deg) !important;
+
+  border-color:
+    rgba(229, 165, 183, 0.3);
+}
+
+
+.thing-card > span {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #c48698;
+}
+
+
+.thing-card h3 {
+  margin-top: 15px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 38px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  color: #fff7f8;
+}
+
+
+.thing-card p {
+  margin-top: 18px;
+
+  max-width: 380px;
+
+  color: #9e858c;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* SPECIAL 18TH CARD */
+
+.special-card {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(177, 50, 87, 0.18),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border-color:
+    rgba(229, 165, 183, 0.2);
+
+  text-align: center;
+
+  align-items: center;
+}
+
+.special-card svg {
+  color: #e5a5b7;
+  margin-bottom: 15px;
+}
+
+.special-card > span {
+  position: static;
+
+  margin-bottom: 10px;
+}
+
+.special-card h3 {
+  font-size: 45px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .things-section {
+    padding: 120px 20px 150px;
+  }
+
+  .things-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .thing-card {
+    min-height: 250px;
+    padding: 30px;
+  }
+
+  .thing-card h3 {
+    font-size: 34px;
+  }
+
+}
+
+/* =========================================
+   CHAPTER THREE — MEMORIES
+========================================= */
+
+.memories-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 170px 25px 220px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(150, 35, 72, 0.16),
+      transparent 42%
+    ),
+    #100609;
+}
+
+
+/* HEADING */
+
+.memories-heading {
+  max-width: 750px;
+
+  margin: 0 auto 110px;
+
+  text-align: center;
+}
+
+.memories-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(
+    55px,
+    8vw,
+    100px
+  );
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+}
+
+.memories-heading h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+.memories-heading > p:last-child {
+  margin-top: 30px;
+
+  color: #a98d95;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* MEMORY WALL */
+
+.memory-wall {
+  position: relative;
+
+  max-width: 1000px;
+
+  min-height: 850px;
+
+  margin: auto;
+}
+
+
+/* POLAROIDS */
+
+.polaroid {
+  position: absolute;
+
+  width: 280px;
+
+  padding: 12px 12px 20px;
+
+  background: #f5eeee;
+
+  color: #241217;
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.35);
+
+  transition:
+    box-shadow 0.4s ease;
+}
+
+.polaroid:hover {
+  box-shadow:
+    0 35px 80px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+/* PHOTO AREA */
+
+.photo-placeholder {
+  width: 100%;
+
+  aspect-ratio: 1 / 1.05;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d8b6bf,
+      #8f5868
+    );
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.polaroid p {
+  margin: 15px 5px 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 21px;
+
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+
+/* POSITIONS */
+
+.polaroid-one {
+  top: 30px;
+  left: 5%;
+}
+
+.polaroid-two {
+  top: 0;
+  right: 7%;
+}
+
+.polaroid-three {
+  top: 330px;
+  left: 20%;
+}
+
+.polaroid-four {
+  top: 360px;
+  right: 16%;
+}
+
+.polaroid-five {
+  top: 590px;
+  left: 39%;
+}
+
+
+/* CENTER HEART */
+
+.memory-heart {
+  position: absolute;
+
+  top: 410px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 75px;
+  height: 75px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: #e5a5b7;
+
+  background:
+    rgba(229, 165, 183, 0.07);
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.2);
+
+  box-shadow:
+    0 0 50px
+    rgba(229, 165, 183, 0.12);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .memories-section {
+    padding:
+      120px 20px
+      150px;
+  }
+
+  .memory-wall {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 40px;
+  }
+
+  .polaroid {
+    position: relative;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    width: min(
+      300px,
+      85vw
+    );
+  }
+
+  .memory-heart {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    transform: none;
+
+    margin: 10px 0;
+  }
+}
+
+/* =========================================
+   CHAPTER FOUR — LETTER
+========================================= */
+
+.letter-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 180px 25px 220px;
+
+  display: flex;
+
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(139, 35, 68, 0.14),
+      transparent 45%
+    ),
+    #090506;
+}
+
+
+.letter-container {
+  width: 100%;
+
+  max-width: 850px;
+
+  text-align: center;
+}
+
+
+/* TITLE */
+
+.letter-intro {
+  margin-top: 40px;
+
+  margin-bottom: 80px;
+}
+
+
+.letter-small {
+  display: block;
+
+  color: #a98d95;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 15px;
+}
+
+
+.letter-intro h2 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(75px, 12vw, 140px);
+
+  font-weight: 500;
+
+  line-height: 0.8;
+
+  color: #f5d9df;
+
+  margin: 0;
+}
+
+
+.letter-line {
+  width: 70px;
+
+  height: 1px;
+
+  margin: 35px auto 0;
+
+  background:
+    rgba(229, 165, 183, 0.5);
+}
+
+
+/* LETTER */
+
+.letter-body {
+  max-width: 650px;
+
+  margin: auto;
+
+  text-align: left;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 22px;
+
+  line-height: 1.8;
+
+  color: #c8b1b7;
+}
+
+
+.letter-body p {
+  margin-bottom: 30px;
+}
+
+
+/* FIRST LINE */
+
+.letter-body > p:first-child {
+  font-size: 30px;
+
+  color: #f3dbe1;
+}
+
+
+/* HIGHLIGHT */
+
+.letter-highlight {
+  position: relative;
+
+  margin:
+    60px 0 !important;
+
+  padding:
+    35px 30px;
+
+  text-align: center;
+
+  font-size: 32px;
+
+  line-height: 1.25;
+
+  color: #f1c4cf;
+
+  font-style: italic;
+
+  border-top:
+    1px solid
+    rgba(229, 165, 183, 0.2);
+
+  border-bottom:
+    1px solid
+    rgba(229, 165, 183, 0.2);
+}
+
+
+/* SIGNATURE */
+
+.letter-signature {
+  margin-top: 70px;
+
+  text-align: right;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.letter-signature span {
+  font-size: 16px;
+
+  color: #9e858c;
+}
+
+
+.letter-signature strong {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 36px;
+
+  font-weight: 500;
+
+  color: #f1c4cf;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .letter-section {
+    padding:
+      130px 25px
+      160px;
+  }
+
+  .letter-intro {
+    margin-bottom: 60px;
+  }
+
+  .letter-body {
+    font-size: 19px;
+
+    line-height: 1.75;
+  }
+
+  .letter-highlight {
+    font-size: 27px;
+
+    padding:
+      30px 15px;
+  }
+
+  .letter-signature {
+    margin-top: 50px;
+  }
+}
+/* =========================================
+   CHAPTER FIVE — OUR SONG
+========================================= */
+
+.song-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 180px 25px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(157, 39, 76, 0.22),
+      transparent 40%
+    ),
+    #0d0508;
+}
+
+
+.song-content {
+  max-width: 700px;
+
+  width: 100%;
+}
+
+
+/* VINYL */
+
+.vinyl-wrapper {
+  width: 240px;
+  height: 240px;
+
+  margin: 50px auto 45px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+.vinyl {
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      #171014 0px,
+      #171014 3px,
+      #0b080a 4px,
+      #171014 6px
+    );
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.55),
+
+    0 0 50px
+    rgba(229, 165, 183, 0.08);
+}
+
+
+.vinyl::after {
+  content: "";
+
+  position: absolute;
+
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #e5a5b7 0%,
+      #9d405e 65%,
+      #602338 100%
+    );
+}
+
+
+.vinyl-center {
+  position: relative;
+
+  z-index: 2;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+
+  z-index: 3;
+}
+
+
+/* TEXT */
+
+.song-caption {
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #c48698;
+
+  margin-bottom: 20px;
+}
+
+
+.song-content h2 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(55px, 8vw, 95px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+}
+
+
+.song-content h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+
+.song-description {
+  max-width: 500px;
+
+  margin: 35px auto 0;
+
+  color: #a98d95;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* PLAY BUTTON */
+
+.play-button {
+  margin-top: 40px;
+
+  padding: 15px 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 100px;
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.play-button:hover {
+  background:
+    rgba(229, 165, 183, 0.12);
+
+  transform: scale(1.04);
+}
+
+
+.play-icon {
+  width: 27px;
+  height: 27px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #e5a5b7;
+
+  color: #18080d;
+
+  font-size: 9px;
+
+  padding-left: 2px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .song-section {
+    padding:
+      130px 20px
+      160px;
+  }
+
+  .vinyl-wrapper {
+    margin-top: 40px;
+  }
+
+  .vinyl {
+    width: 190px;
+    height: 190px;
+  }
+
+}
+/* =========================================
+   FINAL CHAPTER — 18
+========================================= */
+
+.final-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 150px 25px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(175, 39, 82, 0.25),
+      transparent 40%
+    ),
+    #080406;
+}
+
+
+/* BIG 18 */
+
+.eighteen {
+  margin:
+    45px auto
+    35px;
+
+  width: 240px;
+  height: 240px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(229, 165, 183, 0.12),
+      transparent 65%
+    );
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.18);
+
+  box-shadow:
+    0 0 100px
+    rgba(229, 165, 183, 0.12);
+}
+
+
+.eighteen span {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(120px, 17vw, 190px);
+
+  line-height: 1;
+
+  color: #f1c4cf;
+
+  text-shadow:
+    0 0 60px
+    rgba(229, 165, 183, 0.35);
+}
+
+
+/* TEXT */
+
+.final-small {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #a98d95;
+}
+
+
+.final-content h2 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(60px, 10vw, 120px);
+
+  line-height: 0.78;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+}
+
+
+.final-content h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+
+.final-heart {
+  margin: 45px auto 25px;
+
+  color: #e5a5b7;
+
+  animation:
+    heartbeat 2s infinite ease-in-out;
+}
+
+
+@keyframes heartbeat {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+}
+
+
+.final-message {
+  color: #a98d95;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 22px;
+
+  line-height: 1.6;
+}
+
+
+/* LAST BUTTON */
+
+.last-button {
+  margin-top: 50px;
+
+  padding: 16px 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 100px;
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.last-button:hover {
+  transform: scale(1.05);
+
+  background:
+    rgba(229, 165, 183, 0.12);
+}
+
+
+/* =========================================
+   LAST MESSAGE
+========================================= */
+
+.last-message-section {
+  min-height: 100vh;
+
+  padding:
+    160px 25px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 28, 57, 0.14),
+      transparent 45%
+    ),
+    #090506;
+}
+
+
+.last-message-content {
+  max-width: 750px;
+}
+
+
+.last-heart {
+  color: #e5a5b7;
+
+  margin-bottom: 30px;
+
+  animation:
+    heartbeat 2s infinite ease-in-out;
+}
+
+
+.last-message-content h2 {
+  margin-top: 45px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(55px, 8vw, 95px);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+}
+
+
+.last-text {
+  max-width: 550px;
+
+  margin:
+    50px auto 0;
+
+  color: #b49ba2;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px;
+
+  line-height: 1.7;
+}
+
+
+.last-signature {
+  margin-top: 70px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.last-signature span {
+  color: #9e858c;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+}
+
+
+.last-signature strong {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 40px;
+
+  font-weight: 500;
+
+  color: #e5a5b7;
+}
+
+
+.end-mark {
+  margin-top: 100px;
+
+  color: #c48698;
+
+  font-size: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .final-section {
+    padding:
+      120px 20px;
+  }
+
+  .eighteen {
+    width: 190px;
+    height: 190px;
+  }
+
+  .final-message {
+    font-size: 19px;
+  }
+
+  .last-text {
+    font-size: 20px;
+  }
+
+}
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+.memories-section {
+  min-height: 100vh;
+  padding: 140px 30px;
+  background: #0d0609;
+  overflow: hidden;
+}
+
+.memories-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px;
+}
+
+.memories-header h2 {
+  margin: 25px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 7vw, 90px);
+  line-height: 0.9;
+  font-weight: 500;
+}
+
+.memories-header h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.memories-intro {
+  color: #a98d95;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   PHOTO GRID
+========================================= */
+
+.photo-wall {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 35px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   POLAROID
+========================================= */
+
+.polaroid {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 12px 25px;
+
+  background: #f3e8e5;
+
+  color: #24171a;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4);
+
+  transition:
+    box-shadow 0.3s ease;
+}
+
+.polaroid:hover {
+  box-shadow:
+    0 30px 65px rgba(0, 0, 0, 0.55);
+}
+
+.polaroid p {
+  margin: 15px 5px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.photo-frame {
+  width: 100%;
+
+  height: 280px;
+
+  overflow: hidden;
+
+  background: #e8dddd;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    IMPORTANT:
+    This prevents faces from being cropped.
+  */
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SECOND ROW
+========================================= */
+
+.polaroid:nth-child(4) {
+  grid-column: 1 / 2;
+
+  justify-self: end;
+
+  width: 85%;
+}
+
+.polaroid:nth-child(5) {
+  grid-column: 3 / 4;
+
+  justify-self: start;
+
+  width: 85%;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+  .memories-section {
+    padding: 110px 20px;
+  }
+
+  .memories-header {
+    margin-bottom: 50px;
+  }
+
+  .photo-wall {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 35px;
+  }
+
+  .polaroid {
+    width: min(88vw, 330px) !important;
+  }
+
+  .photo-frame {
+    height: 330px;
+  }
+}
+
+/* =========================================
+   AADITI — MEMORY GALLERY
+   NEW CLASSES — DO NOT MIX WITH OLD POLAROID CSS
+========================================= */
+
+.memory-gallery {
+  min-height: 100vh;
+  padding: 140px 30px 150px;
+  background: #0d0609;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.memory-gallery-header {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 75px;
+  text-align: center;
+}
+
+.memory-gallery-header h2 {
+  margin: 25px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 7vw, 90px);
+  line-height: 0.9;
+  font-weight: 500;
+  color: #f5e8eb;
+}
+
+.memory-gallery-header h2 span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+.memory-gallery-intro {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.5;
+
+  color: #a98d95;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.memory-grid {
+  width: min(950px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  column-gap: 28px;
+  row-gap: 55px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.memory-card {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 12px 22px;
+
+  background: #f3e8e5;
+
+  color: #24171a;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.memory-card img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  /*
+    IMPORTANT:
+    No cropping.
+    The complete original photo is shown.
+  */
+  object-fit: contain;
+}
+
+.memory-card p {
+  margin: 14px 4px 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+.memory-card:hover {
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================
+   FIRST ROW
+========================================= */
+
+.memory-card:nth-child(1) {
+  grid-column: 1 / 3;
+}
+
+.memory-card:nth-child(2) {
+  grid-column: 3 / 5;
+}
+
+.memory-card:nth-child(3) {
+  grid-column: 5 / 7;
+}
+
+
+/* =========================================
+   SECOND ROW
+========================================= */
+
+.memory-card:nth-child(4) {
+  grid-column: 2 / 4;
+}
+
+.memory-card:nth-child(5) {
+  grid-column: 4 / 6;
+}
+
+
+/* =========================================
+   SLIGHT NATURAL ROTATION
+========================================= */
+
+.memory-card:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.memory-card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.memory-card:nth-child(3) {
+  transform: rotate(-1.5deg);
+}
+
+.memory-card:nth-child(4) {
+  transform: rotate(1.5deg);
+}
+
+.memory-card:nth-child(5) {
+  transform: rotate(-2deg);
+}
+
+.memory-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(0deg);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+  .memory-gallery {
+    padding: 110px 20px 100px;
+  }
+
+  .memory-gallery-header {
+    margin-bottom: 55px;
+  }
+
+  .memory-grid {
+    width: min(360px, 100%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 40px;
+  }
+
+  .memory-card {
+    width: 100%;
+  }
+
+  .memory-card:nth-child(1),
+  .memory-card:nth-child(2),
+  .memory-card:nth-child(3),
+  .memory-card:nth-child(4),
+  .memory-card:nth-child(5) {
+    transform: rotate(0deg);
+  }
+
+  .memory-card:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+/* =========================================
+   CHAPTER FOUR — LETTER
+========================================= */
+
+.letter-section {
+  min-height: 100vh;
+  padding: 150px 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 45, 65, 0.16),
+      transparent 50%
+    ),
+    #0a0507;
+}
+
+.letter-wrapper {
+  width: min(850px, 100%);
+  text-align: center;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.letter-heading {
+  margin: 25px 0 65px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(60px, 8vw, 100px);
+  line-height: 0.85;
+  font-weight: 500;
+
+  color: #f5e8eb;
+}
+
+.letter-heading span {
+  color: #e5a5b7;
+  font-style: italic;
+}
+
+
+/* =========================================
+   COFFEE PAPER
+========================================= */
+
+.letter-card {
+  width: min(700px, 100%);
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  padding: 55px 65px 60px;
+
+  text-align: left;
+
+  position: relative;
+
+  overflow: hidden;
+
+  /* Warm old-paper base */
+  background:
+    radial-gradient(
+      ellipse at 12% 12%,
+      rgba(105, 62, 30, 0.22),
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse at 88% 18%,
+      rgba(120, 72, 35, 0.15),
+      transparent 25%
+    ),
+    radial-gradient(
+      ellipse at 82% 88%,
+      rgba(100, 55, 25, 0.20),
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse at 18% 85%,
+      rgba(130, 78, 38, 0.13),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #ead9bd,
+      #dfc7a4
+    );
+
+  color: #4a3328;
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.55),
+    inset 0 0 60px rgba(75, 42, 20, 0.10);
+}
+
+
+/* =========================================
+   PAPER GRAIN / TEXTURE
+========================================= */
+
+.letter-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border: 1px solid rgba(86, 50, 30, 0.22);
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* Subtle paper texture */
+
+.letter-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.22;
+
+  background-image:
+    radial-gradient(
+      rgba(80, 50, 30, 0.18) 0.7px,
+      transparent 0.7px
+    );
+
+  background-size: 5px 5px;
+
+  mix-blend-mode: multiply;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   TOP DATE + HEART
+========================================= */
+
+.letter-top {
+  position: relative;
+
+  z-index: 4;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 45px;
+
+  color: #725548;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.letter-top svg {
+  color: #914d61;
+}
+
+
+/* =========================================
+   LETTER BODY
+========================================= */
+
+.letter-body {
+  position: relative;
+
+  z-index: 4;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  line-height: 1.65;
+
+  color: #4a3328;
+}
+
+.letter-body p {
+  margin: 0 0 28px;
+}
+
+
+/* =========================================
+   GREETING
+========================================= */
+
+.letter-greeting {
+  margin-bottom: 35px !important;
+
+  font-size: 30px;
+
+  color: #3f2922;
+}
+
+
+/* =========================================
+   HIGHLIGHT
+========================================= */
+
+.letter-highlight {
+  margin: 40px 0 !important;
+
+  padding: 25px 30px;
+
+  border-left: 2px solid #9b6170;
+
+  background:
+    rgba(110, 65, 40, 0.07);
+
+  color: #704052;
+
+  font-size: 27px;
+
+  line-height: 1.4;
+
+  font-style: italic;
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.letter-signature {
+  margin-top: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  text-align: right;
+}
+
+.letter-signature span {
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  color: #705548;
+}
+
+.letter-signature strong {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 35px;
+
+  font-weight: 500;
+
+  color: #7d3d52;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .letter-section {
+    padding: 110px 18px;
+  }
+
+  .letter-heading {
+    margin-bottom: 45px;
+
+    font-size: clamp(55px, 15vw, 80px);
+  }
+
+  .letter-card {
+    padding: 40px 30px 45px;
+  }
+
+  .letter-body {
+    font-size: 20px;
+
+    line-height: 1.6;
+  }
+
+  .letter-greeting {
+    font-size: 27px;
+  }
+
+  .letter-highlight {
+    padding: 20px;
+
+    font-size: 23px;
+  }
+
+  .letter-signature {
+    margin-top: 45px;
+  }
+
+  .letter-signature strong {
+    font-size: 30px;
+  }
+
+}
+/* =========================================
+   CINEMATIC FINAL CHAPTER
+========================================= */
+
+.final-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 150px 25px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(175, 39, 82, 0.20),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(229, 165, 183, 0.05),
+      transparent 55%
+    ),
+    #080406;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.final-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(900px, 100%);
+}
+
+
+/* =========================================
+   18
+========================================= */
+
+.cinematic-eighteen {
+  margin: 60px auto 25px;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* glowing halo */
+
+.cinematic-eighteen::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(229, 165, 183, 0.16),
+      transparent 65%
+    );
+
+  filter: blur(5px);
+
+  animation: eighteenGlow 4s ease-in-out infinite;
+}
+
+
+/* number */
+
+.cinematic-eighteen span {
+  position: relative;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(150px, 25vw, 300px);
+
+  line-height: 0.75;
+
+  font-weight: 400;
+
+  letter-spacing: -12px;
+
+  color: #f1c4cf;
+
+  text-shadow:
+    0 0 20px rgba(229, 165, 183, 0.25),
+    0 0 70px rgba(229, 165, 183, 0.20),
+    0 0 130px rgba(229, 165, 183, 0.10);
+}
+
+
+@keyframes eighteenGlow {
+
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TEXT
+========================================= */
+
+.final-small {
+  margin-top: 35px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  color: #a98d95;
+}
+
+
+/* =========================================
+   BIRTHDAY TITLE
+========================================= */
+
+.final-content h2 {
+  margin-top: 45px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 10vw, 120px);
+
+  line-height: 0.78;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+
+  color: #f5e8eb;
+}
+
+.final-content h2 span {
+  color: #e5a5b7;
+
+  font-style: italic;
+}
+
+
+/* =========================================
+   HEART
+========================================= */
+
+.final-heart {
+  margin: 50px auto 25px;
+
+  color: #e5a5b7;
+
+  animation:
+    heartbeat 2s ease-in-out infinite;
+
+  filter:
+    drop-shadow(
+      0 0 15px rgba(229, 165, 183, 0.25)
+    );
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.final-message {
+  color: #a98d95;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 23px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   LAST BUTTON
+========================================= */
+
+.last-button {
+  margin-top: 50px;
+
+  padding: 16px 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 100px;
+
+  border:
+    1px solid
+    rgba(229, 165, 183, 0.35);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.last-button:hover {
+  transform: scale(1.05);
+
+  background:
+    rgba(229, 165, 183, 0.12);
+}
+
+
+/* =========================================
+   FLOATING PARTICLES
+========================================= */
+
+.final-particles {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+
+  color: #e5a5b7;
+
+  opacity: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  animation:
+    particleFloat 6s ease-in-out infinite;
+}
+
+.p1 {
+  left: 15%;
+  top: 25%;
+
+  font-size: 16px;
+
+  animation-delay: 0.5s;
+}
+
+.p2 {
+  left: 27%;
+  top: 65%;
+
+  font-size: 10px;
+
+  animation-delay: 1.8s;
+}
+
+.p3 {
+  left: 82%;
+  top: 30%;
+
+  font-size: 20px;
+
+  animation-delay: 2.5s;
+}
+
+.p4 {
+  left: 72%;
+  top: 70%;
+
+  font-size: 9px;
+
+  animation-delay: 3.2s;
+}
+
+.p5 {
+  left: 10%;
+  top: 52%;
+
+  font-size: 12px;
+
+  animation-delay: 4s;
+}
+
+.p6 {
+  left: 90%;
+  top: 58%;
+
+  font-size: 8px;
+
+  animation-delay: 1s;
+}
+
+.p7 {
+  left: 38%;
+  top: 18%;
+
+  font-size: 14px;
+
+  animation-delay: 2s;
+}
+
+.p8 {
+  left: 63%;
+  top: 20%;
+
+  font-size: 9px;
+
+  animation-delay: 3.5s;
+}
+
+
+@keyframes particleFloat {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+
+  25% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: translateY(-20px) scale(1);
+  }
+
+  75% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-45px) scale(0.8);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .final-section {
+    padding: 120px 20px;
+  }
+
+  .cinematic-eighteen {
+    margin-top: 50px;
+  }
+
+  .cinematic-eighteen::before {
+    width: 230px;
+    height: 230px;
+  }
+
+  .cinematic-eighteen span {
+    font-size: 170px;
+    letter-spacing: -8px;
+  }
+
+  .final-content h2 {
+    font-size: clamp(58px, 17vw, 90px);
+
+    margin-top: 40px;
+  }
+
+  .final-message {
+    font-size: 20px;
+  }
+
+}
+
+/* =========================================
+   HERO — CINEMATIC ANIMATION
+   Keeps the original Hero styling
+========================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* -----------------------------------------
+   HERO GLOW
+----------------------------------------- */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(229, 165, 183, 0.10),
+    transparent 68%
+  );
+
+  filter: blur(25px);
+  pointer-events: none;
+
+  animation: heroGlow 7s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+
+/* -----------------------------------------
+   HERO CONTENT
+----------------------------------------- */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* -----------------------------------------
+   EYEBROW
+----------------------------------------- */
+
+.hero-eyebrow {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* -----------------------------------------
+   AADITI
+----------------------------------------- */
+
+.hero-content h1 {
+  position: relative;
+  z-index: 5;
+
+  text-shadow:
+    0 0 20px rgba(229, 165, 183, 0.08),
+    0 0 60px rgba(229, 165, 183, 0.05);
+}
+
+
+/* -----------------------------------------
+   BIG 18
+----------------------------------------- */
+
+.hero-number {
+  position: relative;
+  z-index: 5;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(100px, 15vw, 190px);
+  line-height: 0.75;
+  font-weight: 400;
+
+  color: #f1c4cf;
+
+  text-shadow:
+    0 0 20px rgba(229, 165, 183, 0.25),
+    0 0 60px rgba(229, 165, 183, 0.18),
+    0 0 120px rgba(229, 165, 183, 0.08);
+
+  animation: numberGlow 4s ease-in-out infinite;
+}
+
+@keyframes numberGlow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 20px rgba(229, 165, 183, 0.20),
+      0 0 60px rgba(229, 165, 183, 0.12);
+  }
+
+  50% {
+    text-shadow:
+      0 0 30px rgba(229, 165, 183, 0.35),
+      0 0 90px rgba(229, 165, 183, 0.20);
+  }
+}
+
+
+/* -----------------------------------------
+   SUBTITLE
+----------------------------------------- */
+
+.hero-subtitle {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* -----------------------------------------
+   BUTTON
+----------------------------------------- */
+
+.hero button {
+  position: relative;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 15px 27px;
+
+  border-radius: 100px;
+  border: 1px solid rgba(229, 165, 183, 0.35);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #f5e8eb;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero button:hover {
+  background: rgba(229, 165, 183, 0.10);
+
+  box-shadow:
+    0 10px 40px rgba(229, 165, 183, 0.12);
+
+  transform: translateY(-2px);
+}
+
+
+/* -----------------------------------------
+   FLOATING HEARTS
+----------------------------------------- */
+
+.hero-hearts {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  z-index: 2;
+}
+
+.hero-hearts span {
+  position: absolute;
+
+  color: #e5a5b7;
+
+  opacity: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  animation: floatingHeart 8s ease-in-out infinite;
+}
+
+.hero-hearts span:nth-child(1) {
+  left: 14%;
+  top: 28%;
+  font-size: 22px;
+  animation-delay: 0s;
+}
+
+.hero-hearts span:nth-child(2) {
+  left: 25%;
+  top: 55%;
+  font-size: 10px;
+  animation-delay: 2s;
+}
+
+.hero-hearts span:nth-child(3) {
+  left: 85%;
+  top: 38%;
+  font-size: 20px;
+  animation-delay: 1s;
+}
+
+.hero-hearts span:nth-child(4) {
+  left: 73%;
+  top: 24%;
+  font-size: 14px;
+  animation-delay: 3s;
+}
+
+.hero-hearts span:nth-child(5) {
+  left: 80%;
+  top: 68%;
+  font-size: 17px;
+  animation-delay: 4s;
+}
+
+.hero-hearts span:nth-child(6) {
+  left: 12%;
+  top: 70%;
+  font-size: 10px;
+  animation-delay: 5s;
+}
+
+@keyframes floatingHeart {
+
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+
+  25% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.2;
+    transform: translateY(-25px) scale(1);
+  }
+
+  75% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.8);
+  }
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .hero-number {
+    font-size: 120px;
+  }
+
+  .hero button {
+    padding: 14px 23px;
+  }
+
+}
+/* =========================================
+   HERO — REFINED TYPOGRAPHY
+========================================= */
+
+/* Small opening line */
+
+.hero-eyebrow {
+  margin: 0 0 18px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(19px, 2vw, 24px);
+  font-weight: 400;
+
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+
+  color: #c9aeb5;
+
+  text-align: center;
+}
+
+
+/* Main name */
+
+.hero-content h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+
+  line-height: 0.82;
+}
+
+
+/* 18 */
+
+.hero-number {
+  margin-top: 25px;
+  margin-bottom: 18px;
+
+  font-family: "Cormorant Garamond", serif;
+}
+
+
+/* Birthday line */
+
+.hero-subtitle {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(24px, 3vw, 31px);
+  font-weight: 400;
+
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+
+  color: #d5b9c0;
+
+  text-align: center;
+}
+
+
+/* Button spacing */
+
+.hero button {
+  margin-top: 28px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .hero-eyebrow {
+    margin-bottom: 15px;
+    font-size: 19px;
+  }
+
+  .hero-number {
+    margin-top: 22px;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 24px;
+  }
+
+  .hero button {
+    margin-top: 25px;
+  }
+}
+/* =========================================
+   CHAPTER ONE — ANIMATION OVERRIDE
+========================================= */
+
+/* Story section heading */
+.story-section .section-label {
+  animation: storyLabel 0.9s ease both;
+}
+
+.story-section h2 {
+  animation: storyHeading 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.story-section .story-intro {
+  animation: storyIntro 1s ease 0.2s both;
+}
+
+
+/* Timeline cards */
+
+.story-section .timeline-item {
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    filter 0.4s ease,
+    opacity 0.8s ease;
+
+  animation: storyCard 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+/* Alternating entrance */
+
+.story-section .timeline-item:nth-child(odd) {
+  animation-name: storyCardLeft;
+}
+
+.story-section .timeline-item:nth-child(even) {
+  animation-name: storyCardRight;
+}
+
+
+/* Different delays */
+
+.story-section .timeline-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.story-section .timeline-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.story-section .timeline-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.story-section .timeline-item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+
+/* Hover */
+
+.story-section .timeline-item:hover {
+  filter: brightness(1.08);
+}
+
+
+/* =========================================
+   KEYFRAMES
+========================================= */
+
+@keyframes storyLabel {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes storyHeading {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+@keyframes storyIntro {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes storyCardLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes storyCardRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .story-section .timeline-item:nth-child(odd),
+  .story-section .timeline-item:nth-child(even) {
+    animation-name: storyCard;
+  }
+
+  @keyframes storyCard {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+}
+/* =========================================
+   CHAPTER ONE — MEMORY CARD REDESIGN
+========================================= */
+
+.story-section .memory-card {
+  position: relative;
+
+  width: 100%;
+  min-height: 190px;
+
+  box-sizing: border-box;
+
+  padding: 34px 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #32141f 0%,
+      #1d0b11 100%
+    );
+
+  border: 1px solid rgba(229, 165, 183, 0.22);
+
+  border-radius: 4px;
+
+  color: #f5e8eb;
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+
+/* Inner elegant border */
+
+.story-section .memory-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border: 1px solid rgba(229, 165, 183, 0.09);
+
+  pointer-events: none;
+}
+
+
+/* Number */
+
+.story-section .memory-number {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 12px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  letter-spacing: 4px;
+
+  color: #c9879c;
+}
+
+
+/* Heading */
+
+.story-section .memory-card h3 {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 18px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(30px, 3vw, 40px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  color: #f6e9ec;
+}
+
+
+/* Description */
+
+.story-section .memory-card > p:last-child {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  max-width: 430px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  color: #bfa4ac;
+}
+
+
+/* Hover */
+
+.story-section .memory-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(229, 165, 183, 0.38);
+
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(229, 165, 183, 0.06);
+}
+
+
+/* =========================================
+   TIMELINE DOT
+========================================= */
+
+.story-section .memory-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #e5a5b7;
+
+  box-shadow:
+    0 0 0 5px rgba(229, 165, 183, 0.07),
+    0 0 18px rgba(229, 165, 183, 0.45);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .story-section .memory-card {
+    min-height: auto;
+
+    padding: 30px 27px;
+  }
+
+  .story-section .memory-card h3 {
+    font-size: 30px;
+  }
+
+  .story-section .memory-card > p:last-child {
+    font-size: 17px;
+  }
+
+}
+
+/* =========================================
+   CHAPTER TWO — 18 THINGS
+   CINEMATIC OVERRIDE
+========================================= */
+
+/* Section */
+
+.things-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Soft background glow */
+
+.things-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  left: 50%;
+  top: 45%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(150, 45, 70, 0.10),
+    transparent 68%
+  );
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+/* -----------------------------------------
+   SECTION HEADING
+----------------------------------------- */
+
+.things-section .section-label {
+  animation:
+    thingsLabel 0.9s ease both;
+}
+
+.things-section h2 {
+  animation:
+    thingsHeading 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* -----------------------------------------
+   18 CARDS
+----------------------------------------- */
+
+.things-section .thing-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(55, 20, 32, 0.96),
+      rgba(25, 9, 15, 0.98)
+    );
+
+  border: 1px solid rgba(229, 165, 183, 0.16);
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.4s ease,
+    box-shadow 0.45s ease;
+
+  animation:
+    thingCardReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* Stagger the 18 cards */
+
+.things-section .thing-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.things-section .thing-card:nth-child(2) {
+  animation-delay: 0.10s;
+}
+
+.things-section .thing-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.things-section .thing-card:nth-child(4) {
+  animation-delay: 0.20s;
+}
+
+.things-section .thing-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+.things-section .thing-card:nth-child(6) {
+  animation-delay: 0.30s;
+}
+
+.things-section .thing-card:nth-child(7) {
+  animation-delay: 0.35s;
+}
+
+.things-section .thing-card:nth-child(8) {
+  animation-delay: 0.40s;
+}
+
+.things-section .thing-card:nth-child(9) {
+  animation-delay: 0.45s;
+}
+
+.things-section .thing-card:nth-child(10) {
+  animation-delay: 0.50s;
+}
+
+.things-section .thing-card:nth-child(11) {
+  animation-delay: 0.55s;
+}
+
+.things-section .thing-card:nth-child(12) {
+  animation-delay: 0.60s;
+}
+
+.things-section .thing-card:nth-child(13) {
+  animation-delay: 0.65s;
+}
+
+.things-section .thing-card:nth-child(14) {
+  animation-delay: 0.70s;
+}
+
+.things-section .thing-card:nth-child(15) {
+  animation-delay: 0.75s;
+}
+
+.things-section .thing-card:nth-child(16) {
+  animation-delay: 0.80s;
+}
+
+.things-section .thing-card:nth-child(17) {
+  animation-delay: 0.85s;
+}
+
+.things-section .thing-card:nth-child(18) {
+  animation-delay: 0.90s;
+}
+
+
+/* Inner border */
+
+.things-section .thing-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(229, 165, 183, 0.07);
+
+  pointer-events: none;
+}
+
+
+/* Number */
+
+.things-section .thing-card .number {
+  color: #c9879c;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+
+/* Title */
+
+.things-section .thing-card h3 {
+  color: #f5e8eb;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-weight: 500;
+}
+
+
+/* Description */
+
+.things-section .thing-card p {
+  color: #bfa4ac;
+
+  font-family: "Cormorant Garamond", serif;
+
+  line-height: 1.5;
+}
+
+
+/* -----------------------------------------
+   HOVER
+----------------------------------------- */
+
+.things-section .thing-card:hover {
+  transform:
+    translateY(-8px)
+    scale(1.015);
+
+  border-color:
+    rgba(229, 165, 183, 0.35);
+
+  box-shadow:
+    0 30px 65px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(229, 165, 183, 0.05);
+}
+
+
+/* -----------------------------------------
+   KEYFRAMES
+----------------------------------------- */
+
+@keyframes thingsLabel {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes thingsHeading {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+}
+
+
+@keyframes thingCardReveal {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(35px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .things-section .thing-card:hover {
+    transform: translateY(-4px);
+  }
+
+}
+
+/* =========================================
+   CHAPTER THREE — MEMORY ANIMATION
+========================================= */
+
+.memory-gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------
+   SOFT AMBIENT GLOW
+----------------------------------------- */
+
+.memory-gallery::before {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  left: 50%;
+  top: 45%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(140, 40, 65, 0.10),
+    transparent 68%
+  );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* -----------------------------------------
+   HEADER
+----------------------------------------- */
+
+.memory-gallery-header {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    memoryHeader 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* -----------------------------------------
+   PHOTO CARDS
+----------------------------------------- */
+
+.memory-gallery .memory-card {
+  position: relative;
+
+  animation:
+    memoryPhotoReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    filter 0.5s ease;
+}
+
+
+/* Stagger */
+
+.memory-gallery .memory-card:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.memory-gallery .memory-card:nth-child(2) {
+  animation-delay: 0.30s;
+}
+
+.memory-gallery .memory-card:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.memory-gallery .memory-card:nth-child(4) {
+  animation-delay: 0.60s;
+}
+
+.memory-gallery .memory-card:nth-child(5) {
+  animation-delay: 0.75s;
+}
+
+
+/* -----------------------------------------
+   IMAGE
+----------------------------------------- */
+
+.memory-gallery .memory-card img {
+  transition:
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s ease;
+}
+
+
+/* -----------------------------------------
+   HOVER
+----------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .memory-gallery .memory-card:hover {
+    filter: brightness(1.05);
+
+    box-shadow:
+      0 35px 70px rgba(0, 0, 0, 0.60);
+  }
+
+  .memory-gallery .memory-card:hover img {
+    transform: scale(1.025);
+  }
+
+}
+
+
+/* -----------------------------------------
+   CAPTION
+----------------------------------------- */
+
+.memory-gallery .memory-card p {
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.memory-gallery .memory-card:hover p {
+  color: #7d3d52;
+  transform: translateY(-2px);
+}
+
+
+/* -----------------------------------------
+   KEYFRAMES
+----------------------------------------- */
+
+@keyframes memoryHeader {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+}
+
+
+@keyframes memoryPhotoReveal {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(45px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 750px) {
+
+  .memory-gallery .memory-card:hover img {
+    transform: none;
+  }
+
+}
+
+/* =========================================
+   CHAPTER FOUR — LETTER ANIMATION
+========================================= */
+
+.letter-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------
+   SOFT BACKGROUND LIGHT
+----------------------------------------- */
+
+.letter-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(150, 55, 65, 0.09),
+    transparent 68%
+  );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* -----------------------------------------
+   HEADER REVEAL
+----------------------------------------- */
+
+.letter-wrapper {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    letterHeader 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+
+/* -----------------------------------------
+   LETTER PAPER
+----------------------------------------- */
+
+.letter-card {
+  transform-origin: center top;
+
+  animation:
+    letterReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+
+/* -----------------------------------------
+   PAPER HOVER
+----------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .letter-card:hover {
+    transform:
+      translateY(-5px)
+      rotate(0.15deg);
+
+    box-shadow:
+      0 45px 90px rgba(0, 0, 0, 0.60),
+      inset 0 0 60px rgba(75, 42, 20, 0.10);
+  }
+
+}
+
+
+/* -----------------------------------------
+   LETTER CONTENT
+----------------------------------------- */
+
+.letter-body p {
+  opacity: 0;
+
+  animation:
+    letterText 0.8s ease forwards;
+}
+
+
+/* Stagger the paragraphs */
+
+.letter-body p:nth-child(1) {
+  animation-delay: 0.9s;
+}
+
+.letter-body p:nth-child(2) {
+  animation-delay: 1.05s;
+}
+
+.letter-body p:nth-child(3) {
+  animation-delay: 1.20s;
+}
+
+.letter-body p:nth-child(4) {
+  animation-delay: 1.35s;
+}
+
+.letter-body p:nth-child(5) {
+  animation-delay: 1.50s;
+}
+
+.letter-body p:nth-child(6) {
+  animation-delay: 1.65s;
+}
+
+
+/* Signature */
+
+.letter-signature {
+  opacity: 0;
+
+  animation:
+    letterSignature 1s ease 1.9s forwards;
+}
+
+
+/* -----------------------------------------
+   KEYFRAMES
+----------------------------------------- */
+
+@keyframes letterHeader {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+}
+
+
+@keyframes letterReveal {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(45px)
+      scale(0.96)
+      rotate(1deg);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1)
+      rotate(0deg);
+  }
+
+}
+
+
+@keyframes letterText {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes letterSignature {
+
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .letter-card:hover {
+    transform: none;
+  }
+
+}
+
+/* =========================================
+   CHAPTER FIVE — OUR SONG
+========================================= */
+
+.song-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------
+   AMBIENT GLOW
+----------------------------------------- */
+
+.song-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  left: 50%;
+  top: 45%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(150, 40, 70, 0.13),
+    transparent 68%
+  );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+
+  animation: songGlow 6s ease-in-out infinite;
+}
+
+@keyframes songGlow {
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+
+}
+
+
+/* -----------------------------------------
+   CONTENT REVEAL
+----------------------------------------- */
+
+.song-content {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    songContentReveal 1.1s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+@keyframes songContentReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+}
+
+
+/* -----------------------------------------
+   VINYL
+----------------------------------------- */
+
+.song-section .vinyl-wrapper {
+  position: relative;
+
+  animation:
+    vinylReveal 1.3s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.35s
+    both;
+}
+
+@keyframes vinylReveal {
+
+  from {
+    opacity: 0;
+    transform:
+      scale(0.75)
+      translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+
+/* -----------------------------------------
+   VINYL GLOW
+----------------------------------------- */
+
+.song-section .vinyl {
+  transition:
+    box-shadow 0.5s ease,
+    transform 0.5s ease;
+}
+
+.song-section .vinyl:not(.playing) {
+  box-shadow:
+    0 0 40px rgba(229, 165, 183, 0.10),
+    inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+
+/* When music plays */
+
+.song-section .vinyl.playing {
+  box-shadow:
+    0 0 50px rgba(229, 165, 183, 0.20),
+    0 0 100px rgba(229, 165, 183, 0.08),
+    inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+
+/* -----------------------------------------
+   CENTER HEART
+----------------------------------------- */
+
+.song-section .vinyl-center {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.song-section .vinyl.playing .vinyl-center {
+  animation:
+    songHeartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes songHeartPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 20px rgba(229, 165, 183, 0.20);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 35px rgba(229, 165, 183, 0.40);
+  }
+
+}
+
+
+/* -----------------------------------------
+   CAPTION
+----------------------------------------- */
+
+.song-caption {
+  animation:
+    songCaption 0.9s ease 1s both;
+}
+
+@keyframes songCaption {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* -----------------------------------------
+   PLAY BUTTON
+----------------------------------------- */
+
+.song-play-button {
+  animation:
+    songButton 0.9s ease 1.2s both;
+}
+
+.song-play-button:hover {
+  box-shadow:
+    0 10px 35px rgba(229, 165, 183, 0.10);
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .song-section::before {
+    width: 400px;
+    height: 400px;
+  }
+
+}
+/* =========================================
+   FINAL CHAPTER — CINEMATIC ANIMATION
+========================================= */
+
+.final-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------
+   AMBIENT GLOW
+----------------------------------------- */
+
+.final-section::before {
+  animation:
+    finalGlow 7s ease-in-out infinite;
+}
+
+@keyframes finalGlow {
+
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+}
+
+
+/* -----------------------------------------
+   FINAL CONTENT
+----------------------------------------- */
+
+.final-content {
+  animation:
+    finalContentReveal 1.2s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+@keyframes finalContentReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* -----------------------------------------
+   18 — SLOW BREATHING GLOW
+----------------------------------------- */
+
+.cinematic-eighteen span {
+  animation:
+    finalNumberGlow 4s ease-in-out infinite;
+}
+
+@keyframes finalNumberGlow {
+
+  0%,
+  100% {
+    text-shadow:
+      0 0 20px rgba(229, 165, 183, 0.20),
+      0 0 60px rgba(229, 165, 183, 0.12),
+      0 0 120px rgba(229, 165, 183, 0.06);
+  }
+
+  50% {
+    text-shadow:
+      0 0 30px rgba(229, 165, 183, 0.40),
+      0 0 80px rgba(229, 165, 183, 0.22),
+      0 0 150px rgba(229, 165, 183, 0.10);
+  }
+
+}
+
+
+/* -----------------------------------------
+   FINAL HEART
+----------------------------------------- */
+
+.final-heart {
+  animation:
+    finalHeartbeat 2s ease-in-out infinite;
+}
+
+@keyframes finalHeartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.08);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.05);
+  }
+
+}
+
+
+/* -----------------------------------------
+   PARTICLES
+----------------------------------------- */
+
+.final-particles .particle {
+  animation-duration: 7s;
+}
+
+
+/* -----------------------------------------
+   LAST BUTTON
+----------------------------------------- */
+
+.last-button {
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.last-button:hover {
+  box-shadow:
+    0 12px 40px rgba(229, 165, 183, 0.12);
+}
+
+
+/* =========================================
+   LAST MESSAGE
+========================================= */
+
+.last-message-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Soft final glow */
+
+.last-message-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: 50%;
+  top: 45%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(120, 30, 55, 0.10),
+    transparent 68%
+  );
+
+  filter: blur(40px);
+
+  pointer-events: none;
+}
+
+
+/* Content */
+
+.last-message-content {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    lastMessageReveal 1.3s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+@keyframes lastMessageReveal {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(45px)
+      scale(0.97);
+
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+
+}
+
+
+/* Final heart */
+
+.last-message-content .last-heart {
+  animation:
+    finalHeartPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes finalHeartPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+
+}
+
+
+/* Final text */
+
+.last-text {
+  animation:
+    finalTextReveal 1s ease 0.4s both;
+}
+
+.last-signature {
+  animation:
+    finalSignatureReveal 1s ease 0.8s both;
+}
+
+@keyframes finalTextReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes finalSignatureReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* -----------------------------------------
+   END MARK
+----------------------------------------- */
+
+.end-mark {
+  animation:
+    endMarkGlow 4s ease-in-out infinite;
+}
+
+@keyframes endMarkGlow {
+
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
